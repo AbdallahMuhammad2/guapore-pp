@@ -1,0 +1,55 @@
+/* src/App.css */
+
+/* Estilos globais */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f1f1;
+}
+
+main {
+  padding: 20px;
+  padding-bottom: 60px; /* Espaço para o rodapé */
+}
+
+.app.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+.app.dark .form-container {
+  background: #1e1e1e;
+  box-shadow: none;
+}
+
+.app.dark .form-container h2,
+.app.dark .form-container label {
+  color: #fff;
+}
+
+.app.dark .form-container textarea,
+.app.dark .form-container select,
+.app.dark .form-container input[type="file"],
+.app.dark .form-container input[type="text"] {
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+.app.dark .form-container button {
+  background: #BB86FC;
+}
+
+.app.dark header {
+  background: linear-gradient(135deg, #3700B3, #6200EE);
+}
+
+.app.dark footer {
+  background: #1e1e1e;
+  color: #ccc;
+}
+
+.app.dark .theme-toggle {
+  color: #fff;
+}
