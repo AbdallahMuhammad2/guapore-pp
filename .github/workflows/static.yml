@@ -1,0 +1,43 @@
+# Workflow para implantar uma aplicação React no GitHub Pages
+name: Deploy React App to GitHub Pages
+
+on:
+  # Executa em push na branch main
+  push:
+    branches:
+      - main
+
+  # Permite executar o workflow manualmente na aba Actions
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout do repositório
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Configurar o Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Substitua pela versão do Node.js que você usa
+
+      # Instalar dependências
+      - name: Install dependencies
+        run: npm install
+
+      # Build da aplicação React
+      - name: Build React app
+        run: npm run build
+
+      # Implantar no GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
